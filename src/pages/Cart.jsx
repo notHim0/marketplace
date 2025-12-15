@@ -30,13 +30,13 @@ const Cart = ({ cart, handlePay }) => {
 								/>
 								<span className="font-medium text-lg">{item.name}</span>
 							</div>
-							<span className="font-bold">${item.price}</span>
+							<span className="font-bold"> ₹{item.price}</span>
 						</div>
 					))}
 
 					<div className="border-t mt-6 pt-6 flex justify-between items-center">
 						<span className="text-xl font-bold">Total:</span>
-						<span className="text-2xl font-bold text-blue-600">${total}</span>
+						<span className="text-2xl font-bold text-blue-600"> ₹{total}</span>
 					</div>
 
 					<button

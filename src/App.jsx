@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import { initialProducts } from "./data/product";
+import ContextWrapper from "./components/ContextWrapper";
 
 function App() {
 	const [products, setProducts] = useState(initialProducts);
@@ -28,23 +29,25 @@ function App() {
 	};
 
 	return (
-		<BrowserRouter>
-			<div className="min-h-screen bg-gray-50 text-gray-800">
-				<Navbar cartCount={cart.length} />
-				<div className="p-8 max-w-7xl mx-auto">
-					<Routes>
-						<Route
-							path="/"
-							element={<Home products={products} addToCart={addToCart} />}
-						/>
-						<Route
-							path="/cart"
-							element={<Cart cart={cart} handlePay={handlePay} />}
-						/>
-					</Routes>
+		<ContextWrapper>
+			<BrowserRouter>
+				<div className="min-h-screen bg-gray-50 text-gray-800">
+					<Navbar cartCount={cart.length} />
+					<div className="p-8 max-w-7xl mx-auto">
+						<Routes>
+							<Route
+								path="/"
+								element={<Home products={products} addToCart={addToCart} />}
+							/>
+							<Route
+								path="/cart"
+								element={<Cart cart={cart} handlePay={handlePay} />}
+							/>
+						</Routes>
+					</div>
 				</div>
-			</div>
-		</BrowserRouter>
+			</BrowserRouter>
+		</ContextWrapper>
 	);
 }
 

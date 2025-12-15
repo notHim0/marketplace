@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
+import CustomWalletConnect from "./CustomWalletConnect";
 
 const Navbar = ({ cartCount }) => {
 	return (
 		<nav className="bg-white shadow-md p-4 sticky top-0 z-10">
 			<div className="max-w-7xl mx-auto flex justify-between items-center">
-				<Link to="/" className="text-2xl font-bold text-blue-600">
-					Flower Marketplace
+				<Link to="/" className="text-lg md:text-2xl font-bold text-blue-600">
+					Marketplace
 				</Link>
 				<Link
 					to="/cart"
@@ -20,6 +21,7 @@ const Navbar = ({ cartCount }) => {
 						</span>
 					)}
 				</Link>
+				<CustomWalletConnect />
 			</div>
 		</nav>
 	);
